@@ -12,8 +12,15 @@ export interface WorkspaceDocument extends Document {
 
 const WorkspaceSchema = new Schema<WorkspaceDocument>(
   {
-    name: { type: String, required: true, trim: true },
-    description: { type: String, required: false },
+    name: { 
+      type: String, 
+      required: true, 
+      trim: true 
+    },
+    description: { 
+      type: String, 
+      required: false 
+    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",

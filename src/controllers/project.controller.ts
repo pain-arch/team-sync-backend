@@ -7,7 +7,7 @@ import {
 } from "../validation/project.validation";
 import { workspaceIdSchema } from "../validation/workspace.validation";
 import { getMemberRoleInWorkspace } from "../services/member.service";
-import { roleGuard } from "../utils/roleGuard";
+import { roleGuard } from "../utils/roleGurd";
 import { Permissions } from "../enums/role.enum";
 import {
   createProjectService,

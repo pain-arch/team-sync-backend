@@ -9,7 +9,7 @@ import { projectIdSchema } from "../validation/project.validation";
 import { workspaceIdSchema } from "../validation/workspace.validation";
 import { Permissions } from "../enums/role.enum";
 import { getMemberRoleInWorkspace } from "../services/member.service";
-import { roleGuard } from "../utils/roleGuard";
+import { roleGuard } from "../utils/roleGurd";
 import {
   createTaskService,
   deleteTaskService,

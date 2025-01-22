@@ -19,7 +19,7 @@ import {
 } from "../services/workspace.service";
 import { getMemberRoleInWorkspace } from "../services/member.service";
 import { Permissions } from "../enums/role.enum";
-import { roleGuard } from "../utils/roleGuard";
+import { roleGuard } from "../utils//roleGurd";
 import { updateWorkspaceSchema } from "../validation/workspace.validation";
 
 export const createWorkspaceController = asyncHandler(

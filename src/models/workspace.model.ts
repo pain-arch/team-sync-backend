@@ -6,24 +6,17 @@ export interface WorkspaceDocument extends Document {
   description: string;
   owner: mongoose.Types.ObjectId;
   inviteCode: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
-const WorkspaceSchema = new Schema<WorkspaceDocument>(
+const workspaceSchema = new Schema<WorkspaceDocument>(
   {
-    name: { 
-      type: String, 
-      required: true, 
-      trim: true 
-    },
-    description: { 
-      type: String, 
-      required: false 
-    },
+    name: { type: String, required: true, trim: true },
+    description: { type: String, required: false },
     owner: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Reference to User model (the workspace creator)
       required: true,
     },
     inviteCode: {
@@ -38,13 +31,13 @@ const WorkspaceSchema = new Schema<WorkspaceDocument>(
   }
 );
 
-WorkspaceSchema.methods.resetInviteCode = function () {
-    this.inviteCode = generateInviteCode();
+workspaceSchema.methods.resetInviteCode = function () {
+  this.inviteCode = generateInviteCode();
 };
 
 const WorkspaceModel = mongoose.model<WorkspaceDocument>(
-    "Workspace",
-    WorkspaceSchema
+  "Workspace",
+  workspaceSchema
 );
 
 export default WorkspaceModel;
